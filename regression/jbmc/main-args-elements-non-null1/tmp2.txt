@@ -1,0 +1,617 @@
+JBMC version 5.8 64-bit x86_64 macos
+Parsing Main.class
+Java main class: Main
+Converting
+Generating GOTO Program
+Removal of virtual functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Main.Main() /* java::Main.<init>:()V */
+        // 0 file Main.java line 1 function java::Main.<init>:()V bytecode-index 1
+        // Labels: pc0
+        ASSERT !(&this->@java.lang.Object == null) // Throw null
+        // 1 file Main.java line 1 function java::Main.<init>:()V bytecode-index 1
+        &this->@java.lang.Object . java.lang.Object.<init>:()V();
+        // 2 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Main.main() /* java::Main.main:([Ljava/lang/String;)V */
+        // 3 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V bytecode-index 2
+        // Labels: pc0
+        ASSERT !(arg0a == null) // Throw null
+        // 4 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V bytecode-index 2
+        IF arg0a->length <= 0 THEN GOTO 1
+        // 5 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 3
+        // Labels: pc5
+        clinit_wrapper();
+        // 6 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 4
+        IF (int)$assertionsDisabled != 0 THEN GOTO 1
+        // 7 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 8
+        // Labels: pc11
+        ASSERT !(arg0a == null) // Throw null
+        // 8 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 8
+        ASSERT 0 >= 0 // Array index should be >= 0
+        // 9 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 8
+        ASSERT 0 < arg0a->length // Array index should be < length
+        // 10 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 8
+        IF arg0a->data[0] != null THEN GOTO 1
+        // 11 no location
+        // Labels: pc17
+        struct java.lang.AssertionError *new_tmp0;
+        // 12 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 9
+        new_tmp0 = ALLOCATE(struct java.lang.AssertionError, 5ul, false);
+        // 13 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 9
+        *new_tmp0 = { .@class_identifier="java::java.lang.AssertionError",
+    .@lock=false };
+        // 14 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 11
+        ASSERT !(new_tmp0 == null) // Throw null
+        // 15 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 11
+        new_tmp0 . java.lang.AssertionError.<init>:()V();
+        // 16 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 11
+        ASSERT false // assertion at file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 11
+        // 17 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 12
+        ASSERT !(new_tmp0 == null) // Throw null
+        // 18 file Main.java line 6 function java::Main.main:([Ljava/lang/String;)V bytecode-index 12
+        THROW: throw(new_tmp0)
+        // 19 no location
+        dead new_tmp0;
+        // 20 file Main.java line 7 function java::Main.main:([Ljava/lang/String;)V bytecode-index 13
+        // Labels: pc25
+     1: GOTO 2
+        // 21 no location
+     2: END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Main.<clinit>() /* java::Main.<clinit>:()V */
+        // 22 no location
+        int $stack_tmp1;
+        // 23 no location
+        // Labels: pc0
+        boolean return_tmp0;
+        // 24 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 1
+        ASSERT !(&Main@class_model == null) // Throw null
+        // 25 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 1
+        &Main@class_model . java.lang.Class.desiredAssertionStatus:()Z();
+        // 26 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 1
+        return_tmp0 = NONDET(boolean);
+        // 27 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 2
+        IF !((int)return_tmp0 != 0) THEN GOTO 1
+        // 28 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 5
+        dead return_tmp0;
+        // 29 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 5
+        GOTO 2
+        // 30 no location
+     1: dead return_tmp0;
+        // 31 no location
+        // Labels: pc8
+        $stack_tmp1 = 1;
+        // 32 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 4
+        GOTO 3
+        // 33 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 5
+        // Labels: pc12
+     2: SKIP
+        // 34 no location
+        $stack_tmp1 = 0;
+        // 35 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 6
+        // Labels: pc13
+     3: clinit_wrapper();
+        // 36 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 6
+        $assertionsDisabled = (boolean)$stack_tmp1;
+        // 37 file Main.java line 1 function java::Main.<clinit>:()V bytecode-index 7
+        dead $stack_tmp1;
+        // 38 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[int].clone:() /* java::array[int].clone:()Ljava/lang/Object; */
+        // 39 no location
+        struct java::array[int] *cloned_array;
+        // 40 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 41 no location
+        cloned_array = ALLOCATE(struct java::array[int], 17ul, false);
+        // 42 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[int]", .@lock=false },
+    .length=0, .data=null };
+        // 43 no location
+        cloned_array->length = this->length;
+        // 44 no location
+        int *tmp_new_array_data$1;
+        // 45 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"signedbv\" \"width\" (\"32\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[int]\") \"#base_name\" (\"array[int]\") \"#element_type\" (\"signedbv\" \"width\" (\"32\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[int].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[int]\") \"#base_name\" (\"array[int]\") \"#element_type\" (\"signedbv\" \"width\" (\"32\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 46 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 47 no location
+        ARRAY_SET(tmp_new_array_data$1, 0);
+        // 48 no location
+        dead tmp_new_array_data$1;
+        // 49 no location
+        int index;
+        // 50 no location
+        index = 0;
+        // 51 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 52 no location
+        cloned_array->data[index] = this->data[index];
+        // 53 no location
+        index = index + 1;
+        // 54 no location
+        GOTO 1
+        // 55 no location
+     2: array[int].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 56 no location
+        dead index;
+        // 57 no location
+        dead cloned_array;
+        // 58 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[long].clone:() /* java::array[long].clone:()Ljava/lang/Object; */
+        // 59 no location
+        struct java::array[long] *cloned_array;
+        // 60 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 61 no location
+        cloned_array = ALLOCATE(struct java::array[long], 17ul, false);
+        // 62 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[long]", .@lock=false },
+    .length=0, .data=null };
+        // 63 no location
+        cloned_array->length = this->length;
+        // 64 no location
+        long *tmp_new_array_data$1;
+        // 65 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"signedbv\" \"width\" (\"64\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[long]\") \"#base_name\" (\"array[long]\") \"#element_type\" (\"signedbv\" \"width\" (\"64\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[long].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[long]\") \"#base_name\" (\"array[long]\") \"#element_type\" (\"signedbv\" \"width\" (\"64\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 66 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 67 no location
+        ARRAY_SET(tmp_new_array_data$1, 0L);
+        // 68 no location
+        dead tmp_new_array_data$1;
+        // 69 no location
+        int index;
+        // 70 no location
+        index = 0;
+        // 71 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 72 no location
+        cloned_array->data[index] = this->data[index];
+        // 73 no location
+        index = index + 1;
+        // 74 no location
+        GOTO 1
+        // 75 no location
+     2: array[long].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 76 no location
+        dead index;
+        // 77 no location
+        dead cloned_array;
+        // 78 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[short].clone:() /* java::array[short].clone:()Ljava/lang/Object; */
+        // 79 no location
+        struct java::array[short] *cloned_array;
+        // 80 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 81 no location
+        cloned_array = ALLOCATE(struct java::array[short], 17ul, false);
+        // 82 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[short]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 83 no location
+        cloned_array->length = this->length;
+        // 84 no location
+        short *tmp_new_array_data$1;
+        // 85 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"signedbv\" \"width\" (\"16\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[short]\") \"#base_name\" (\"array[short]\") \"#element_type\" (\"signedbv\" \"width\" (\"16\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[short].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[short]\") \"#base_name\" (\"array[short]\") \"#element_type\" (\"signedbv\" \"width\" (\"16\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 86 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 87 no location
+        ARRAY_SET(tmp_new_array_data$1, (short)0);
+        // 88 no location
+        dead tmp_new_array_data$1;
+        // 89 no location
+        int index;
+        // 90 no location
+        index = 0;
+        // 91 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 92 no location
+        cloned_array->data[index] = this->data[index];
+        // 93 no location
+        index = index + 1;
+        // 94 no location
+        GOTO 1
+        // 95 no location
+     2: array[short].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 96 no location
+        dead index;
+        // 97 no location
+        dead cloned_array;
+        // 98 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[byte].clone:() /* java::array[byte].clone:()Ljava/lang/Object; */
+        // 99 no location
+        struct java::array[byte] *cloned_array;
+        // 100 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 101 no location
+        cloned_array = ALLOCATE(struct java::array[byte], 17ul, false);
+        // 102 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[byte]", .@lock=false },
+    .length=0, .data=null };
+        // 103 no location
+        cloned_array->length = this->length;
+        // 104 no location
+        byte *tmp_new_array_data$1;
+        // 105 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"signedbv\" \"width\" (\"8\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[byte]\") \"#base_name\" (\"array[byte]\") \"#element_type\" (\"signedbv\" \"width\" (\"8\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[byte].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[byte]\") \"#base_name\" (\"array[byte]\") \"#element_type\" (\"signedbv\" \"width\" (\"8\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 106 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 107 no location
+        ARRAY_SET(tmp_new_array_data$1, (byte)0);
+        // 108 no location
+        dead tmp_new_array_data$1;
+        // 109 no location
+        int index;
+        // 110 no location
+        index = 0;
+        // 111 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 112 no location
+        cloned_array->data[index] = this->data[index];
+        // 113 no location
+        index = index + 1;
+        // 114 no location
+        GOTO 1
+        // 115 no location
+     2: array[byte].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 116 no location
+        dead index;
+        // 117 no location
+        dead cloned_array;
+        // 118 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[char].clone:() /* java::array[char].clone:()Ljava/lang/Object; */
+        // 119 no location
+        struct java::array[char] *cloned_array;
+        // 120 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 121 no location
+        cloned_array = ALLOCATE(struct java::array[char], 17ul, false);
+        // 122 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[char]", .@lock=false },
+    .length=0, .data=null };
+        // 123 no location
+        cloned_array->length = this->length;
+        // 124 no location
+        char *tmp_new_array_data$1;
+        // 125 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"unsignedbv\" \"width\" (\"16\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[char]\") \"#base_name\" (\"array[char]\") \"#element_type\" (\"unsignedbv\" \"width\" (\"16\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[char].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[char]\") \"#base_name\" (\"array[char]\") \"#element_type\" (\"unsignedbv\" \"width\" (\"16\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 126 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 127 no location
+        ARRAY_SET(tmp_new_array_data$1, (char)'\u0000');
+        // 128 no location
+        dead tmp_new_array_data$1;
+        // 129 no location
+        int index;
+        // 130 no location
+        index = 0;
+        // 131 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 132 no location
+        cloned_array->data[index] = this->data[index];
+        // 133 no location
+        index = index + 1;
+        // 134 no location
+        GOTO 1
+        // 135 no location
+     2: array[char].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 136 no location
+        dead index;
+        // 137 no location
+        dead cloned_array;
+        // 138 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[float].clone:() /* java::array[float].clone:()Ljava/lang/Object; */
+        // 139 no location
+        struct java::array[float] *cloned_array;
+        // 140 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 141 no location
+        cloned_array = ALLOCATE(struct java::array[float], 17ul, false);
+        // 142 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[float]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 143 no location
+        cloned_array->length = this->length;
+        // 144 no location
+        float *tmp_new_array_data$1;
+        // 145 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"floatbv\" \"width\" (\"32\") \"f\" (\"23\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[float]\") \"#base_name\" (\"array[float]\") \"#element_type\" (\"floatbv\" \"width\" (\"32\") \"f\" (\"23\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[float].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[float]\") \"#base_name\" (\"array[float]\") \"#element_type\" (\"floatbv\" \"width\" (\"32\") \"f\" (\"23\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 146 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 147 no location
+        ARRAY_SET(tmp_new_array_data$1, 0.0f);
+        // 148 no location
+        dead tmp_new_array_data$1;
+        // 149 no location
+        int index;
+        // 150 no location
+        index = 0;
+        // 151 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 152 no location
+        cloned_array->data[index] = this->data[index];
+        // 153 no location
+        index = index + 1;
+        // 154 no location
+        GOTO 1
+        // 155 no location
+     2: array[float].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 156 no location
+        dead index;
+        // 157 no location
+        dead cloned_array;
+        // 158 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[double].clone:() /* java::array[double].clone:()Ljava/lang/Object; */
+        // 159 no location
+        struct java::array[double] *cloned_array;
+        // 160 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 161 no location
+        cloned_array = ALLOCATE(struct java::array[double], 17ul, false);
+        // 162 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[double]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 163 no location
+        cloned_array->length = this->length;
+        // 164 no location
+        double *tmp_new_array_data$1;
+        // 165 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"floatbv\" \"width\" (\"64\") \"f\" (\"52\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[double]\") \"#base_name\" (\"array[double]\") \"#element_type\" (\"floatbv\" \"width\" (\"64\") \"f\" (\"52\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[double].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[double]\") \"#base_name\" (\"array[double]\") \"#element_type\" (\"floatbv\" \"width\" (\"64\") \"f\" (\"52\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 166 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 167 no location
+        ARRAY_SET(tmp_new_array_data$1, 0.0);
+        // 168 no location
+        dead tmp_new_array_data$1;
+        // 169 no location
+        int index;
+        // 170 no location
+        index = 0;
+        // 171 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 172 no location
+        cloned_array->data[index] = this->data[index];
+        // 173 no location
+        index = index + 1;
+        // 174 no location
+        GOTO 1
+        // 175 no location
+     2: array[double].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 176 no location
+        dead index;
+        // 177 no location
+        dead cloned_array;
+        // 178 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[boolean].clone:() /* java::array[boolean].clone:()Ljava/lang/Object; */
+        // 179 no location
+        struct java::array[boolean] *cloned_array;
+        // 180 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 181 no location
+        cloned_array = ALLOCATE(struct java::array[boolean], 17ul, false);
+        // 182 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[boolean]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 183 no location
+        cloned_array->length = this->length;
+        // 184 no location
+        boolean *tmp_new_array_data$1;
+        // 185 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"c_bool\" \"width\" (\"8\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[boolean]\") \"#base_name\" (\"array[boolean]\") \"#element_type\" (\"c_bool\" \"width\" (\"8\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[boolean].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[boolean]\") \"#base_name\" (\"array[boolean]\") \"#element_type\" (\"c_bool\" \"width\" (\"8\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 186 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 187 no location
+        ARRAY_SET(tmp_new_array_data$1, false);
+        // 188 no location
+        dead tmp_new_array_data$1;
+        // 189 no location
+        int index;
+        // 190 no location
+        index = 0;
+        // 191 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 192 no location
+        cloned_array->data[index] = this->data[index];
+        // 193 no location
+        index = index + 1;
+        // 194 no location
+        GOTO 1
+        // 195 no location
+     2: array[boolean].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 196 no location
+        dead index;
+        // 197 no location
+        dead cloned_array;
+        // 198 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::array[reference].clone:() /* java::array[reference].clone:()Ljava/lang/Object; */
+        // 199 no location
+        struct java::array[reference] *cloned_array;
+        // 200 
+        ASSERT this->length >= 0 // Array size should be >= 0
+        // 201 no location
+        cloned_array = ALLOCATE(struct java::array[reference], 17ul, false);
+        // 202 no location
+        *cloned_array = { .@java.lang.Object={ .@class_identifier="java::array[reference]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 203 no location
+        cloned_array->length = this->length;
+        // 204 no location
+        void **tmp_new_array_data$1;
+        // 205 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"pointer\" \"\" (\"empty\") \"width\" (\"64\") \"#reference\" (\"1\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"member\" \"\" (\"dereference\" \"\" (\"symbol\" \"type\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::array[reference]\") \"#base_name\" (\"array[reference]\") \"#element_type\" (\"pointer\" \"\" (\"empty\") \"width\" (\"64\") \"#reference\" (\"1\"))) \"width\" (\"64\") \"#reference\" (\"1\")) \"identifier\" (\"java::array[reference].clone:()Ljava/lang/Object;::this\")) \"type\" (\"symbol\" \"identifier\" (\"java::array[reference]\") \"#base_name\" (\"array[reference]\") \"#element_type\" (\"pointer\" \"\" (\"empty\") \"width\" (\"64\") \"#reference\" (\"1\")))) \"type\" (\"signedbv\" \"width\" (\"32\")) \"component_name\" (\"length\")))");
+        // 206 no location
+        cloned_array->data = tmp_new_array_data$1;
+        // 207 no location
+        ARRAY_SET(tmp_new_array_data$1, null);
+        // 208 no location
+        dead tmp_new_array_data$1;
+        // 209 no location
+        int index;
+        // 210 no location
+        index = 0;
+        // 211 no location
+     1: IF !(index < this->length) THEN GOTO 2
+        // 212 no location
+        cloned_array->data[index] = this->data[index];
+        // 213 no location
+        index = index + 1;
+        // 214 no location
+        GOTO 1
+        // 215 no location
+     2: array[reference].clone:()Ljava/lang/Object;#return_value = &cloned_array->@java.lang.Object;
+        // 216 no location
+        dead index;
+        // 217 no location
+        dead cloned_array;
+        // 218 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java::Main::clinit_wrapper /* java::Main::clinit_wrapper */
+        // 219 no location
+        IF !(clinit_already_run == false) THEN GOTO 1
+        // 220 no location
+        clinit_already_run = true;
+        // 221 no location
+        Main.<clinit>:()V();
+        // 222 no location
+     1: END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__CPROVER__start /* __CPROVER__start */
+        // 223 no location
+        __CPROVER_initialize();
+        // 224 no location
+        uncaught_exception' = null;
+        // 225 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        struct java::array[reference] *arg0a;
+        // 226 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        int nondet_array_length$1;
+        // 227 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        struct java.lang.String **array_data_init$2;
+        // 228 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        int array_init_iter$3;
+        // 229 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        nondet_array_length$1 = NONDET(int);
+        // 230 no location
+        ASSUME nondet_array_length$1 >= 0
+        // 231 no location
+        ASSUME nondet_array_length$1 <= 5
+        // 232 no location
+        arg0a = ALLOCATE(struct java::array[reference], 17ul, false);
+        // 233 no location
+        *arg0a = { .@java.lang.Object={ .@class_identifier="java::array[reference]",
+    .@lock=false },
+    .length=0, .data=null };
+        // 234 no location
+        arg0a->length = nondet_array_length$1;
+        // 235 no location
+        struct java.lang.String **tmp_new_array_data$1;
+        // 236 no location
+        tmp_new_array_data$1 = irep("(\"side_effect\" \"type\" (\"pointer\" \"\" (\"pointer\" \"\" (\"symbol\" \"identifier\" (\"java::java.lang.String\") \"#base_name\" (\"java.lang.String\")) \"width\" (\"64\") \"#reference\" (\"1\")) \"width\" (\"64\")) \"statement\" (\"java_new_array_data\") \"size\" (\"constant\" \"type\" (\"signedbv\" \"width\" (\"32\")) \"value\" (\"00000000000000000000000000000101\")))");
+        // 237 no location
+        arg0a->data = (void **)tmp_new_array_data$1;
+        // 238 no location
+        ARRAY_SET(tmp_new_array_data$1, null);
+        // 239 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        array_data_init$2 = (struct java.lang.String **)arg0a->data;
+        // 240 no location
+        array_init_iter$3 = 0;
+        // 241 no location
+        // Labels: array_init_iter$3_header
+     1: SKIP
+        // 242 no location
+        IF array_init_iter$3 == arg0a->length THEN GOTO 3
+        // 243 no location
+        IF array_init_iter$3 == 5 THEN GOTO 3
+        // 244 no location
+        IF !NONDET(_Bool) THEN GOTO 2
+        // 245 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        array_data_init$2[array_init_iter$3] = null;
+        // 246 no location
+     2: array_init_iter$3 = array_init_iter$3 + 1;
+        // 247 no location
+        GOTO 1
+        // 248 no location
+        // Labels: array_init_iter$3_done
+     3: SKIP
+        // 249 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        INPUT("arg0a", arg0a);
+        // 250 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        Main.main:([Ljava/lang/String;)V(arg0a);
+        // 251 no location
+        GOTO 4
+        // 252 no location
+        // Labels: toplevel_catch
+        SKIP
+        // 253 no location
+        // Labels: after_catch
+     4: SKIP
+        // 254 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        OUTPUT("arg0a", arg0a);
+        // 255 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        OUTPUT("uncaught_exception'", uncaught_exception');
+        // 256 no location
+        dead tmp_new_array_data$1;
+        // 257 no location
+        dead array_init_iter$3;
+        // 258 no location
+        dead array_data_init$2;
+        // 259 no location
+        dead nondet_array_length$1;
+        // 260 no location
+        dead arg0a;
+        // 261 no location
+        END_FUNCTION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__CPROVER_initialize /* __CPROVER_initialize */
+        // 262 no location
+        __CPROVER_rounding_mode = 0;
+        // 263 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        $assertionsDisabled = false;
+        // 264 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        clinit_already_run = false;
+        // 265 file Main.java line 5 function java::Main.main:([Ljava/lang/String;)V
+        @inflight_exception = null;
+        // 266 no location
+        END_FUNCTION
+

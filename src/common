@@ -1,0 +1,13 @@
+GIT_RELEASE_INFO = $(shell git describe --tags --always --long --dirty || echo "n/a")
+
+# make >= 4.0 has a `file` function that may be fast than `shell cat`
+# for now, portability wins
+KNOWN_GIT_RELEASE_INFO = $(shell cat .release_info 2>/dev/null)
+ifneq ($(GIT_RELEASE_INFO), $(KNOWN_GIT_RELEASE_INFO))
+$(filter %_parse_options$(OBJEXT), $(OBJ)): .release_info
+
+.release_info:
+		echo $(GIT_RELEASE_INFO) > $@
+
+.PHONY: .release_info
+endif

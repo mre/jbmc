@@ -1,0 +1,8 @@
+*.d
+*.o
+*.a
+*.out
+*.log
+*~
+regression/regression.stats
+build
