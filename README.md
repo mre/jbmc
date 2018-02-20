@@ -1,5 +1,4 @@
 [![Build Status][travis_img]][travis] [![Build Status][appveyor_img]][appveyor]
-[![Build Status][coverity_img]][coverity]
 
 [CProver Wiki](http://www.cprover.org/wiki)
 
@@ -7,7 +6,7 @@ About
 =====
 
 JBMC is a Bounded Model Checker for Java programs. It supports
-checking for runtime exceptions and user-definde assertions.xs
+checking for runtime exceptions and user-definde assertions.
 The verification is performed by unwinding the loops in the program
 and passing the resulting equation to a decision procedure.
 
@@ -23,7 +22,7 @@ Get the current *develop* version: `git clone https://github.com/diffblue/jbmc.g
 Prerequisites
 ============
 
-Symex compiles CBMC as part of its build process and as such has all the pre-requisites of CBMC. These can be viewed at: [diffblue/cbmc:COMPILING](http://github.com/diffblue/cbmc/blob/master/COMPILING)
+JBMC compiles CBMC as part of its build process and as such has all the pre-requisites of CBMC. These can be viewed at: [diffblue/cbmc:COMPILING](http://github.com/diffblue/cbmc/blob/master/COMPILING)
 
 Compilation
 ===========
@@ -61,7 +60,7 @@ Contributing to the code base
 =============================
 
 1. Fork the repository
-2. Clone the repository `git clone git@github.com:YOURNAME/cbmc.git`
+2. Clone the repository `git clone git@github.com:YOURNAME/jbmc.git`
 3. Create a branch from the `develop` branch (default branch)
 4. Make your changes (follow the [coding guidelines](https://github.com/diffblue/cbmc/blob/develop/CODING_STANDARD.md))
 5. Push your changes to your branch
