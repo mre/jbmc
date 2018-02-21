@@ -3,8 +3,8 @@ image: Visual Studio 2013
 clone_depth: 50
 environment:
   BUILD_ENV: MSVC
-  PATH: C:\projects\cbmc\deps\bin;%PATH%
-  INCLUDE: C:\projects\cbmc\deps\include
+  PATH: C:\projects\jbmc\deps\bin;%PATH%
+  INCLUDE: C:\projects\jbmc\deps\include
 install:
 - ps: |
     #check if dependencies were copied from cache, if not, download them.
@@ -58,10 +58,10 @@ test_script:
     cd regression
 
     rem HACK disable failing tests
-    rmdir /s /q cbmc-java\VarLengthArrayTrace1
-    rmdir /s /q cbmc-java\classpath1
-    rmdir /s /q cbmc-java\jar-file3
-    rmdir /s /q cbmc-java\tableswitch2
+    rmdir /s /q jbmc\VarLengthArrayTrace1
+    rmdir /s /q jbmc\classpath1
+    rmdir /s /q jbmc\jar-file3
+    rmdir /s /q jbmc\tableswitch2
 
     make test
 
