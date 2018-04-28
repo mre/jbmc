@@ -12,3 +12,5 @@ macro(generic_includes name)
 endmacro(generic_includes)
 
 add_subdirectory(jbmc)
+add_subdirectory(janalyzer)
+add_subdirectory(jdiff)

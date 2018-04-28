@@ -1,9 +1,9 @@
-DIRS = jbmc java_bytecode
+DIRS = jbmc java_bytecode jdiff janalyzer
 
 include config.inc
 
 .PHONY: all
-all: jbmc.dir
+all: jbmc.dir jdiff.dir janalyzer.dir
 
 .PHONY: setup-submodules
 setup-submodules:
@@ -27,6 +27,12 @@ java_bytecode.dir:
 
 .PHONY: jbmc.dir
 jbmc.dir: java_bytecode.dir cprover.dir
+
+.PHONY: jdiff.dir
+jdiff.dir: java_bytecode.dir cprover.dir
+
+.PHONY: janalyzer.dir
+janalyzer.dir: java_bytecode.dir cprover.dir
 
 $(patsubst %, %.dir, $(DIRS)):
 	## Entering $(basename $@)

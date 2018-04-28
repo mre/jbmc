@@ -47,6 +47,10 @@ add_subdirectory(regression)
 set_target_properties(
     jbmc
     jbmc-lib
+    jdiff
+    jdiff-lib
+    janalyzer
+    janalyzer-lib
     jbmc-unit
 
     PROPERTIES

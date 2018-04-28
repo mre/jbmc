@@ -20,9 +20,12 @@ Author: Daniel Kroening, kroening@kroening.com
 
 #include <analyses/goto_check.h>
 
+#include <cbmc/bmc.h>
+
 #include <goto-programs/goto_trace.h>
 #include <goto-programs/lazy_goto_model.h>
 #include <goto-programs/show_properties.h>
+#include <goto-instrument/cover.h>
 
 #include <java_bytecode/java_bytecode_language.h>
 
@@ -32,21 +35,22 @@ class optionst;
 
 // clang-format off
 #define JBMC_OPTIONS \
-  "(program-only)(preprocess)(slice-by-trace):" \
+  OPT_BMC \
+  "(preprocess)(slice-by-trace):" \
   OPT_FUNCTIONS \
-  "(no-simplify)(unwind):(unwindset):(slice-formula)(full-slice)" \
+  "(no-simplify)(full-slice)" \
+  OPT_REACHABILITY_SLICER \
   "(debug-level):(no-propagation)(no-simplify-if)" \
   "(document-subgoals)(outfile):" \
   "(object-bits):" \
   "(classpath):(cp):(main-class):" \
-  "(depth):(partial-loops)(no-unwinding-assertions)(unwinding-assertions)" \
   OPT_GOTO_CHECK \
   "(no-assertions)(no-assumptions)" \
   "(no-built-in-assertions)" \
   "(xml-ui)(json-ui)" \
   "(smt1)(smt2)(fpa)(cvc3)(cvc4)(boolector)(yices)(z3)(opensmt)(mathsat)" \
   "(no-sat-preprocessor)" \
-  "(no-pretty-names)(beautify)" \
+  "(beautify)" \
   "(dimacs)(refine)(max-node-refinement):(refine-arrays)(refine-arithmetic)"\
   "(refine-strings)" \
   "(string-printable)" \
@@ -55,7 +59,7 @@ class optionst;
   "(16)(32)(64)(LP64)(ILP64)(LLP64)(ILP32)(LP32)" \
   OPT_SHOW_GOTO_FUNCTIONS \
   "(show-loops)" \
-  "(show-symbol-table)(show-parse-tree)(show-vcc)" \
+  "(show-symbol-table)(show-parse-tree)" \
   OPT_SHOW_PROPERTIES \
   "(drop-unused-functions)" \
   "(property):(stop-on-fail)(trace)" \
@@ -67,11 +71,11 @@ class optionst;
   "(ppc-macos)" \
   "(arrays-uf-always)(arrays-uf-never)" \
   "(no-arch)(arch):" \
-  "(graphml-witness):" \
   JAVA_BYTECODE_LANGUAGE_OPTIONS \
   "(java-unwind-enum-static)" \
   "(localize-faults)(localize-faults-method):" \
-  OPT_GOTO_TRACE
+  OPT_GOTO_TRACE \
+  "(symex-driven-lazy-loading)"
 // clang-format on
 
 class jbmc_parse_optionst:
@@ -90,20 +94,21 @@ public:
 
   void process_goto_function(
     goto_model_functiont &function,
-    const can_produce_functiont &,
+    const abstract_goto_modelt &,
     const optionst &);
   bool process_goto_functions(goto_modelt &goto_model, const optionst &options);
 
 protected:
   ui_message_handlert ui_message_handler;
+  std::unique_ptr<cover_configt> cover_config;
 
   void eval_verbosity();
   void get_command_line_options(optionst &);
   int get_goto_program(
     std::unique_ptr<goto_modelt> &goto_model, const optionst &);
+  bool show_loaded_functions(const abstract_goto_modelt &goto_model);
 
   bool set_properties(goto_modelt &goto_model);
-  int do_bmc(bmct &, goto_modelt &goto_model);
 };
 
 #endif // CPROVER_JBMC_JBMC_PARSE_OPTIONS_H

@@ -18,6 +18,7 @@ OBJ += ../../$(CPROVER_DIR)/src/ansi-c/ansi-c$(LIBEXT) \
       ../../$(CPROVER_DIR)/src/pointer-analysis/rewrite_index$(OBJEXT) \
       ../../$(CPROVER_DIR)/src/pointer-analysis/goto_program_dereference$(OBJEXT) \
       ../../$(CPROVER_DIR)/src/goto-instrument/full_slicer$(OBJEXT) \
+      ../../$(CPROVER_DIR)/src/goto-instrument/reachability_slicer$(OBJEXT) \
       ../../$(CPROVER_DIR)/src/goto-instrument/nondet_static$(OBJEXT) \
       ../../$(CPROVER_DIR)/src/goto-instrument/cover$(OBJEXT) \
       ../../$(CPROVER_DIR)/src/goto-instrument/cover_basic_blocks$(OBJEXT) \

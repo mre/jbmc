@@ -1,23 +1,15 @@
 /*******************************************************************\
 
-Module: CBMC Main Module
+Module: JDIFF Main Module
 
-Author: Daniel Kroening, kroening@kroening.com
+Author: Peter Schrammel
 
 \*******************************************************************/
 
 /// \file
-/// CBMC Main Module
+/// JDIFF Main Module
 
-/*
-
-  JBMC
-  Bounded Model Checking for Java
-  Copyright (C) 2017-2018 Daniel Kroening <kroening@kroening.com>
-
-*/
-
-#include "jbmc_parse_options.h"
+#include "jdiff_parse_options.h"
 
 #include <util/unicode.h>
 
@@ -41,7 +33,7 @@ int wmain(int argc, const wchar_t **argv_wide)
 int main(int argc, const char **argv)
 {
 #endif
-  jbmc_parse_optionst parse_options(argc, argv);
+  jdiff_parse_optionst parse_options(argc, argv);
 
   int res=parse_options.main();
 
